@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './Hero'
 
 const SolidColors = () => {
+
     return (
         <div>
             <Hero

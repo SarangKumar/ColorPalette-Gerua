@@ -25,6 +25,7 @@ a {
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
     @include flexBox($justifyContent: space-between);
     box-shadow: $boxShadow1;
+    background-color: #fff;
     position: sticky;
     top: 0;
 
@@ -132,9 +133,7 @@ a {
   .footer {
     box-shadow: $boxShadow1;
     padding: 2rem 0 2rem;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    margin-top: 5rem;
 
     .top {
       @include flexBox($justifyContent: flex-start);
@@ -176,6 +175,60 @@ a {
           }
         }
       }
+    }
+  }
+
+  // color-palette
+
+  .palette-box {
+    // background-color: green;
+    min-width: 170px;
+    border-radius: 20px;
+
+    .palette {
+      min-height: 385px;
+      border-radius: 20px;
+      overflow: hidden;
+      background-color: yellow;
+      margin-bottom: 1rem;
+      @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0);
+
+      .palette-color {
+        width: 100%;
+        flex: 1 1 auto;
+        padding: 1rem;
+        height: fit-content;
+
+      }
+    }
+
+    .palette-bottom {
+      padding: 0 10px;
+      @include flexBox($justifyContent: space-between, $colGap: 5rem);
+
+      button {
+        @include flexBox($justifyContent: flex-start, $colGap: 0.5rem);
+        outline: none;
+        border: none;
+        padding: 5px 7px;
+        border-radius: 5px;
+        transition: $transition;
+        background-color: rgb(235, 235, 235);
+
+        &:hover {
+          background-color: rgb(187, 187, 187);
+        }
+      }
+    }
+  }
+
+  // home
+
+  .home {
+    .container {
+      @include flexBox($rowGap: 2rem, $colGap: 2rem);
+      margin: 100px 10vw;
+      // mar
     }
   }
 }
