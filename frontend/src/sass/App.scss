@@ -9,12 +9,17 @@
   // outline: 1px solid #333;
 }
 
+a {
+  text-decoration: none;
+  color: $primary;
+
+}
+
 .App {
   // background-color: $primary;
 
   // header
   .header {
-    width: 100vw;
     padding: 1rem 1rem;
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
     @include flexBox($justifyContent: space-between);
@@ -84,6 +89,45 @@
 
       100% {
         transform: rotate(360deg);
+      }
+    }
+  }
+
+  .footer {
+    box-shadow: $boxShadow1;
+    padding:1rem 2rem;
+
+    .top {
+      @include flexBox($justifyContent: flex-start);
+      margin-left: 1rem;
+      font-size: 1.2rem;
+
+      h1 {
+        font-weight: 500;
+        font-size: 2rem;
+      }
+    }
+
+    .bottom {
+      @include flexBox($justifyContent: flex-end, $colGap: 2rem);
+      font-size: 1.2rem;
+      margin-right: 1rem;
+      transition: $transition;
+
+      a {
+        @include flexBox();
+        border-radius: 50%;
+        width: 3rem;
+        height: 3rem;
+        background-color: $secondary;
+        
+        .footer-icons {
+          color: $textColorDark;
+          
+        }
+        &:hover {
+          scale: 1.2;
+        }
       }
     }
   }

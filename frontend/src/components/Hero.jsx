@@ -1,14 +1,14 @@
 import React from 'react'
 
-const Hero = () => {
+const Hero = ({heading, para1, para2}) => {
     return (
         <div className='hero'>
-            <h1>Popular Color Palettes</h1>
+            <h1>{heading}</h1>
             <p>
-                Collection of 1000+ color palettes.
+                {para1}
             </p>
             <p>
-                Pick your perfect color palette for your next dream project.
+                {para2}
             </p>
         </div>
     )
