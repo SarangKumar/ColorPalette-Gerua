@@ -1,0 +1,48 @@
+@import 'frequent';
+@import 'variables';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $fontFam1;
+  outline: 1px solid #333;
+}
+
+.App {
+  background-color: $primary;
+
+  // header
+  .header {
+    width: 100vw;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+    @include flexBox($justifyContent: space-between);
+    box-shadow: $boxShadow1;
+
+    >h3 {
+      font-size: 2rem;
+
+      >b {
+        color: $primary;
+
+      }
+    }
+
+    ul {
+      @include flexBox($colGap: 2rem);
+
+      >li {
+        list-style: none;
+        font-size: 1.1rem;
+        &:active,
+        &:hover {
+          color: $primary;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+
+}
