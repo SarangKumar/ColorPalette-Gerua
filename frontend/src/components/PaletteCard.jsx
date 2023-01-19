@@ -7,8 +7,14 @@ const PaletteCard = (props) => {
     <div className='palette-box'>
       <div className='palette'>
         {props.data.colors.map((color) => {
-          return <div className='palette-color' style={{ backgroundColor: color }}>{color}</div>
+          return (<div onClick={() => {
+            navigator.clipboard.writeText(color)
+          }} className='palette-color' style={{ backgroundColor: color }}>
+            <p>{color}</p>
+          </div>)
         })}
+
+
 
       </div>
       <div className="palette-bottom">

@@ -44,10 +44,9 @@ a {
       >li {
         list-style: none;
         font-size: 1.1rem;
-        color: $textColorDark;
 
-        Link {
-          font-size: 30px;
+        a {
+          color: $textColorDark;
 
           &:active,
           &:hover {
@@ -59,8 +58,10 @@ a {
     }
   }
 
+  //hero
+
   .hero {
-    margin: 15rem 0 10rem;
+    margin: 12rem 0 10rem;
     text-align: center;
 
     >h1 {
@@ -131,7 +132,7 @@ a {
 
   // footer
   .footer {
-    box-shadow: $boxShadow1;
+    box-shadow: $boxShadow2;
     padding: 2rem 0 2rem;
     margin-top: 5rem;
 
@@ -188,17 +189,29 @@ a {
     .palette {
       min-height: 385px;
       border-radius: 20px;
-      overflow: hidden;
-      background-color: yellow;
       margin-bottom: 1rem;
       @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0);
 
       .palette-color {
+        @include flexBox;
         width: 100%;
         flex: 1 1 auto;
         padding: 1rem;
         height: fit-content;
+        transition: $transition;
+        border: 10px solid inherit;
 
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .palette-color:nth-child(1) {
+        border-radius: 20px 20px 0 0;
+      }
+
+      .palette-color:nth-child(5) {
+        border-radius: 0 0 20px 20px;
       }
     }
 
@@ -226,7 +239,7 @@ a {
 
   .home {
     .container {
-      @include flexBox($rowGap: 2rem, $colGap: 2rem);
+      @include flexBox($rowGap: 4rem, $colGap: 4rem);
       margin: 100px 10vw;
       // mar
     }
