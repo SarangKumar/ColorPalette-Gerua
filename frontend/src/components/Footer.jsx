@@ -10,12 +10,15 @@ const Footer = () => {
             </div>
             <div className="bottom">
                 <p>Privacy Policy</p>
-                <a href="/">
-                    <FaGithub className='footer-icons' size={26} />
-                </a>
-                <a href="/">
-                    <FaLinkedinIn className='footer-icons' size={26} />
-                </a>
+                <div className="links">
+
+                    <a href="https://github.com/SarangKumar/Color-palette">
+                        <FaGithub className='footer-icons' size={26} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/sarang-kumar-0a558b221/">
+                        <FaLinkedinIn className='footer-icons' size={26} />
+                    </a>
+                </div>
             </div>
         </footer>
     )

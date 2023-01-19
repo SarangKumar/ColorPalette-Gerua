@@ -17,6 +17,7 @@ a {
 
 .App {
   // background-color: $primary;
+  transition: $transition;
 
   // header
   .header {
@@ -24,6 +25,8 @@ a {
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
     @include flexBox($justifyContent: space-between);
     box-shadow: $boxShadow1;
+    position: sticky;
+    top: 0;
 
     >h3 {
       font-size: 2rem;
@@ -40,11 +43,16 @@ a {
       >li {
         list-style: none;
         font-size: 1.1rem;
+        color: $textColorDark;
 
-        &:active,
-        &:hover {
-          color: $primary;
-          cursor: pointer;
+        Link {
+          font-size: 30px;
+
+          &:active,
+          &:hover {
+            color: $primary;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -82,6 +90,33 @@ a {
       animation: spin 1s linear infinite;
     }
 
+    .loader-dot {
+      @include flexBox($colGap: 1.5rem);
+
+      li {
+        list-style: none;
+        height: 2rem;
+        width: 2rem;
+        background-color: $primary;
+        border-radius: 50%;
+        animation: updown 600ms linear infinite alternate;
+      }
+
+      li:nth-child(2) {
+        animation-delay: 200ms;
+      }
+
+      li:nth-child(3) {
+        animation-delay: 400ms;
+      }
+
+      @keyframes updown {
+        100% {
+          transform: translateY(2rem);
+        }
+      }
+    }
+
     @keyframes spin {
       0% {
         transform: rotate(0deg);
@@ -93,13 +128,17 @@ a {
     }
   }
 
+  // footer
   .footer {
     box-shadow: $boxShadow1;
-    padding:1rem 2rem;
+    padding: 2rem 0 2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 
     .top {
       @include flexBox($justifyContent: flex-start);
-      margin-left: 1rem;
+      margin-left: 2rem;
       font-size: 1.2rem;
 
       h1 {
@@ -111,22 +150,30 @@ a {
     .bottom {
       @include flexBox($justifyContent: flex-end, $colGap: 2rem);
       font-size: 1.2rem;
-      margin-right: 1rem;
+      margin-right: 2rem;
       transition: $transition;
 
-      a {
+      .links {
         @include flexBox();
-        border-radius: 50%;
-        width: 3rem;
-        height: 3rem;
-        background-color: $secondary;
-        
-        .footer-icons {
-          color: $textColorDark;
-          
-        }
-        &:hover {
-          scale: 1.2;
+        transition: $transition;
+
+        a {
+          @include flexBox();
+          transition: $transition;
+          border-radius: 50%;
+          width: 3rem;
+          height: 3rem;
+          background-color: $secondary;
+
+          .footer-icons {
+            color: $textColorDark;
+            transition: $transition;
+
+          }
+
+          &:hover {
+            scale: 1.2;
+          }
         }
       }
     }
