@@ -1,7 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import PaletteCard from './PaletteCard'
-
+import Loader2 from './Loader2'
 const Home = () => {
 
     const ColorPaletteData = [{
@@ -12,7 +12,7 @@ const Home = () => {
     }, {
         id: 2,
         title: "Sandy",
-        colors: ["#efd9b4", "#d6a692", "#a39081" ,"#4d6160", "#292522"],
+        colors: ["#efd9b4", "#d6a692", "#a39081", "#4d6160", "#292522"],
         likes: 40,
     }, {
         id: 3,
@@ -54,7 +54,7 @@ const Home = () => {
         colors: ["#69d2e7", "##a7dbd8", "#e0e4cc", "#f38630", "#fa6900"],
         likes: 20,
     }
-]
+    ]
 
     return (
         <div className='home'>
@@ -68,7 +68,7 @@ const Home = () => {
                     return <PaletteCard key={colorPalette.id} data={colorPalette} />
                 })}
             </div>
-
+            <Loader2 />
         </div>
     )
 }
