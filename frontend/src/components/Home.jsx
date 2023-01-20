@@ -71,7 +71,7 @@ const Home = () => {
                 })}
             </div>
 
-            <Loader2 />
+            {/* <Loader2 /> */}
         </div>
     )
 }

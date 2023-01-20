@@ -15,14 +15,14 @@ function App() {
       <Header />
       {/* <div className="container"></div> */}
       <Routes>
-        <Route path='/palette' element={<Home />}/>
+        <Route path='/' element={<Home />}/>
         <Route path='/solid-color' element={<SolidColors />}/>
+        <Route path='/palette-zoom' element={<PaletteZoom />}/>
         <Route path='/palette/:id' element={<PaletteZoom />}/>
         <Route path='*' element={<PageNotFound />}/>
       </Routes>      
       {/* <Loader /> */}
       {/* <Loader2 /> */}
-
       <Footer />
     </div>
   );

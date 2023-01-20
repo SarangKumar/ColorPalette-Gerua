@@ -81,6 +81,7 @@ body {
       color: $textColorDark;
       font-size: 1.2rem;
     }
+
   }
 
   // loader
@@ -211,22 +212,21 @@ body {
     .palette {
       min-height: 385px;
       border-radius: 20px;
+      @include flexBox($rowGap: 0, $colGap: 0);
+      max-width: 350px;
       margin-bottom: 1rem;
-      // @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0);
-      @include flexBox();
-
 
       .palette-color {
-        @include flexBox;
+        @include flexBox();
         width: 100%;
         flex: 1 1 auto;
-        padding: 1rem;
+        padding: 1.7rem;
         height: fit-content;
         transition: $transition;
         border: 10px solid inherit;
 
         &:hover {
-          transform: scale(1.2);
+          transform: scale(1.1);
           cursor: pointer;
         }
       }
@@ -274,19 +274,39 @@ body {
   }
 
   //page-not-found
-  .page-not-found {
-    @include flexBox($flexDirection: row);
-    // height: 100vh;
-    overflow: auto;
+  .not-found-container {
 
-    h2 {
-      border-right: 4px solid $primary;
-      padding-right: 1rem;
-      font-size: 2rem;
+    .page-not-found {
+      @include flexBox($flexDirection: row);
+      // height: 100vh;
+      overflow: auto;
+
+      h2 {
+        border-right: 4px solid $primary;
+        padding-right: 1rem;
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.1rem;
+      }
     }
 
-    p {
-      font-size: 1.1rem;
+    .links {
+      @include flexBox;
+      margin: 2rem;
+      
+      button {
+        padding: 0.8rem 1.1rem;
+        border-radius: 5px;
+        background-color: $primary;
+        border: none;
+        box-shadow: $boxShadow1;
+        
+        a{
+          color: $textColorLight;
+        }
+      }
     }
   }
 
@@ -333,29 +353,27 @@ body {
         height: 100%;
 
         .toolbar {
-          @include flexBox($flexDirection: column, $rowGap: 2rem, $colGap: 5rem);
-          background-color: rgba(99, 91, 91, 0.511);
+          @include flexBox($flexDirection: row, $rowGap: 2rem, $colGap: 5rem);
+          background-color: rgba(126, 126, 126, 0.511);
           width: 5rem;
           padding: 2rem 1rem;
           border-radius: 1rem;
           display: none;
           transition: $transition;
 
+
           li {
             list-style: none;
             @include flexBox;
             padding: 0.45rem;
-
-            // svg{
-            //   stroke: 2rem;
-            // }
           }
 
           svg {
+            transition: $transition;
 
             &:hover {
               cursor: pointer;
-
+              transform: scale(1.2);
             }
           }
         }
@@ -363,11 +381,13 @@ body {
         &:hover .toolbar {
           display: block;
         }
+
       }
 
       @media only screen and (max-width: 980px) {
         @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0, $alignItems: stretch);
         width: 100%;
+
       }
     }
 
