@@ -8,12 +8,13 @@ const PaletteCard = (props) => {
   return (
     <div className='palette-box'>
       <div className='palette'>
-        {props.data.colors.map((color) => {
-          return (<div onClick={() => {
-            navigator.clipboard.writeText(color)
-          }} className='palette-color' style={{ backgroundColor: color }}>
-            <p>{color}</p>
-          </div>)
+        {props.data.colors.map((color, index) => {
+          return (
+            <div key={index} onClick={() => {
+              navigator.clipboard.writeText(color)
+            }} className='palette-color' style={{ backgroundColor: color }}>
+              <p>{color}</p>
+            </div>)
         })}
 
       </div>
@@ -22,7 +23,7 @@ const PaletteCard = (props) => {
           <FaRegHeart size={20} /> <p>{props.data.likes}</p>
         </button>
         <button className='more-info'>
-          <Link to={`/palette/${props.data.id}`}><BsThreeDots className='more-info' size={30} /></Link>
+          <Link to={`/palette/${props.data.id}`}><BsThreeDots className='more-info' size={20} /></Link>
         </button>
       </div>
     </div>

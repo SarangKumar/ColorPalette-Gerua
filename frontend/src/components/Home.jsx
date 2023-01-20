@@ -1,7 +1,6 @@
 import React from 'react'
 import Hero from './Hero'
 import PaletteCard from './PaletteCard'
-import Loader2 from './Loader2';
 
 const Home = () => {
 
@@ -71,7 +70,6 @@ const Home = () => {
                 })}
             </div>
 
-            {/* <Loader2 /> */}
         </div>
     )
 }

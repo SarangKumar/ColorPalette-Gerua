@@ -9,10 +9,28 @@
   // outline: 1px solid #333;
 }
 
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: $textColorDark
+}
+
+
 a {
   text-decoration: none;
   color: $primary;
-
 }
 
 body {
@@ -36,12 +54,15 @@ body {
     width: 100vw;
     top: 0;
 
+    a {
+      font-size: 0.85rem;
+    }
+
     >h3 {
-      font-size: 2rem;
+      font-size: 1.5rem;
 
       >b {
         color: $primary;
-
       }
     }
 
@@ -50,7 +71,7 @@ body {
 
       >li {
         list-style: none;
-        font-size: 1.1rem;
+        font-size: 0.8rem;
 
         a {
           color: $textColorDark;
@@ -66,22 +87,20 @@ body {
   }
 
   //hero
-
   .hero {
-    margin: 12rem 0 10rem;
+    margin: 10rem 0 10rem;
     text-align: center;
 
     >h1 {
-      font-weight: 800;
-      font-size: 2.5rem;
+      font-weight: 600;
+      font-size: 2rem;
       line-height: 2.2;
     }
 
     >p {
       color: $textColorDark;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
-
   }
 
   // loader
@@ -90,23 +109,23 @@ body {
 
     .loader {
       width: 100%;
-      border: 10px solid #f3f3f3;
+      border: 8px solid #f3f3f3;
       /* Light grey */
-      border-top: 10px solid $primary;
+      border-top: 8px solid $primary;
       /* Blue */
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
+      width: 80px;
+      height: 80px;
       animation: spin 1s linear infinite;
     }
 
     .loader-dot {
-      @include flexBox($colGap: 1.5rem);
+      @include flexBox($colGap: 1.2rem);
 
       li {
         list-style: none;
-        height: 2rem;
-        width: 2rem;
+        height: 1.5rem;
+        width: 1.5rem;
         background-color: $primary;
         border-radius: 50%;
         //updown animation
@@ -136,7 +155,7 @@ body {
         }
 
         100% {
-          transform: scale(1.3);
+          transform: scale(1);
         }
       }
     }
@@ -162,18 +181,19 @@ body {
     .top {
       @include flexBox($justifyContent: flex-start);
       margin-left: 2rem;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
 
       h1 {
-        font-weight: 500;
-        font-size: 2rem;
+        font-weight: 600;
+        font-size: 1.3rem;
       }
     }
 
     .bottom {
       @include flexBox($justifyContent: flex-end, $colGap: 2rem);
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       margin-right: 2rem;
+      margin-top: 1rem;
       transition: $transition;
 
       .links {
@@ -184,8 +204,8 @@ body {
           @include flexBox();
           transition: $transition;
           border-radius: 50%;
-          width: 3rem;
-          height: 3rem;
+          width: 2rem;
+          height: 2rem;
           background-color: $secondary;
 
           .footer-icons {
@@ -195,7 +215,8 @@ body {
           }
 
           &:hover {
-            scale: 1.2;
+            // scale: 1.5;
+            transform: scale(1.5);
           }
         }
       }
@@ -205,29 +226,26 @@ body {
   // color-palette
 
   .palette-box {
-    // background-color: green;
-    min-width: 170px;
+    max-width: 12rem;
     border-radius: 20px;
 
     .palette {
-      min-height: 385px;
       border-radius: 20px;
       @include flexBox($rowGap: 0, $colGap: 0);
-      max-width: 350px;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
 
       .palette-color {
         @include flexBox();
         width: 100%;
         flex: 1 1 auto;
-        padding: 1.7rem;
-        height: fit-content;
+        padding: 1rem;
         transition: $transition;
-        border: 10px solid inherit;
+        color: transparent;
 
         &:hover {
           transform: scale(1.1);
           cursor: pointer;
+          color: $textColorDark;
         }
       }
 
@@ -242,7 +260,7 @@ body {
 
     .palette-bottom {
       padding: 0 10px;
-      @include flexBox($justifyContent: space-between, $colGap: 5rem);
+      @include flexBox($justifyContent: space-between);
 
       button {
         @include flexBox($justifyContent: flex-start, $colGap: 0.5rem);
@@ -252,23 +270,21 @@ body {
         border-radius: 5px;
         transition: $transition;
         background-color: rgb(235, 235, 235);
+        height: fit-content;
 
         a {
           color: $textColorDark;
-          padding: 0;
           background-color: transparent;
-
+          height: 50%;
         }
 
         &:hover {
           background-color: rgb(187, 187, 187);
         }
-
       }
 
       .more-info {
         background-color: transparent;
-
       }
     }
   }
@@ -278,32 +294,31 @@ body {
 
     .page-not-found {
       @include flexBox($flexDirection: row);
-      // height: 100vh;
       overflow: auto;
 
       h2 {
-        border-right: 4px solid $primary;
+        border-right: 2px solid $primary;
         padding-right: 1rem;
-        font-size: 2rem;
+        font-size: 1.2rem;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 0.8rem;
       }
     }
 
     .links {
       @include flexBox;
       margin: 2rem;
-      
+
       button {
-        padding: 0.8rem 1.1rem;
+        padding: 0.5rem 0.9rem;
         border-radius: 5px;
         background-color: $primary;
         border: none;
         box-shadow: $boxShadow1;
-        
-        a{
+
+        a {
           color: $textColorLight;
         }
       }
@@ -315,13 +330,17 @@ body {
   .palette-container {
     @include flexBox($flexDirection: row, $justifyContent: flex-end);
 
+    p {
+      font-size: 0.8rem
+    }
+
     .likes {
       @include flexBox;
-      border: 2px solid currentColor;
-      padding: 1rem 1.5rem;
-      margin-right: 30px;
-      font-size: 1.1rem;
-      border-radius: 20px;
+      border: 1px solid currentColor;
+      padding: 0.5rem 0.9rem;
+      margin-right: 2rem;
+      font-size: 1rem;
+      border-radius: 5px;
 
     }
 
@@ -330,19 +349,18 @@ body {
       @include flexBox($colGap: 0, $rowGap: 0);
       height: 80vh;
       width: 100vw;
-      margin-top: 1rem;
 
       .zoom-palette-color {
         height: 100%;
-        font-size: 2rem;
-        font-weight: 600;
+        font-weight: 500;
         color: $textColorDark;
         flex: 1 1 0;
-
+        
         >p {
           @include flexBox($colGap: 0, $rowGap: 0);
           color: $textColorLight;
           margin-top: 0.5rem;
+          font-size: 1.2rem;
           // -webkit-text-stroke-color: rgb(203, 203, 203);
           // -webkit-text-stroke-width: 0.8px;
         }
@@ -353,11 +371,11 @@ body {
         height: 100%;
 
         .toolbar {
-          @include flexBox($flexDirection: row, $rowGap: 2rem, $colGap: 5rem);
+          @include flexBox($flexDirection: row, $rowGap: 1rem, $colGap: 3rem);
           background-color: rgba(126, 126, 126, 0.511);
-          width: 5rem;
-          padding: 2rem 1rem;
-          border-radius: 1rem;
+          width: 2.3rem;
+          padding: 0.5rem 0.5rem;
+          border-radius: 0.5rem;
           display: none;
           transition: $transition;
 
@@ -365,7 +383,7 @@ body {
           li {
             list-style: none;
             @include flexBox;
-            padding: 0.45rem;
+            // padding: 0.3rem;
           }
 
           svg {
@@ -386,8 +404,8 @@ body {
 
       @media only screen and (max-width: 980px) {
         @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0, $alignItems: stretch);
-        width: 100%;
-
+        width: 100vw;
+        // height: 10vh;
       }
     }
 

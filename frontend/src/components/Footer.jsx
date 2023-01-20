@@ -13,10 +13,10 @@ const Footer = () => {
                 <div className="links">
 
                     <a href="https://github.com/SarangKumar/Color-palette">
-                        <FaGithub className='footer-icons' size={26} />
+                        <FaGithub className='footer-icons' size={19} />
                     </a>
                     <a href="https://www.linkedin.com/in/sarang-kumar-0a558b221/">
-                        <FaLinkedinIn className='footer-icons' size={26} />
+                        <FaLinkedinIn className='footer-icons' size={19} />
                     </a>
                 </div>
             </div>

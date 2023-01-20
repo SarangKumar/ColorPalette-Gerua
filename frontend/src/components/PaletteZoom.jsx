@@ -75,7 +75,7 @@ const PaletteZoom = () => {
                 {colorData.title}
             </p>
             <div className="likes">
-                <AiOutlineHeart size={30} />
+                <AiOutlineHeart size={20} />
                 <p>{colorData.likes}</p>
             </div>
 
@@ -95,7 +95,7 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
     return (
         <ul className="toolbar">
             <li><RxCross2 onClick={() => {
-                let result = filterColorsArray.filter((data, index) => color != data);
+                let result = filterColorsArray.filter((data, index) => color !== data);
                 setFilterColorsArray(result);
             }} color={'white'} size={50} />
             </li>
@@ -109,10 +109,6 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
             </li>
         </ul>
     )
-}
-
-const copyCode = (color) => {
-    navigator.clipboard.writeText(color)
 }
 
 
