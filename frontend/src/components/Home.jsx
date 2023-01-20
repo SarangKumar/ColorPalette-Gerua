@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from './Hero'
 import PaletteCard from './PaletteCard'
+import Loader2 from './Loader2';
 
 const Home = () => {
 
@@ -17,18 +18,18 @@ const Home = () => {
     }, {
         id: 3,
         title: "Subsut",
-        colors: ["#f2e3c6", "#ffc6a5", "#e6324b", "#2b2b2b", "#353634"],
-        likes: 20,
+        colors: ["#c75233", "#ffc6a5", "#e6324b", "#2b2b2b", "#353634"],
+        likes: 60,
     }, {
         id: 4,
         title: "Subsut",
-        colors: ["#f2e3c6", "#ffc6a5", "#e6324b", "#2b2b2b", "#353634"],
-        likes: 20,
+        colors: ["#c75233", "#c78933", "#d6ceaa", "#79b5ac", "#5e2f46"],
+        likes: 25,
     }, {
         id: 5,
         title: "Subsut",
-        colors: ["#f2e3c6", "#ffc6a5", "#e6324b", "#2b2b2b", "#353634"],
-        likes: 20,
+        colors: ["#f8b195", "#f67280", "#c06c84", "#6c5b7b", "#355c7d"],
+        likes: 47,
     }, {
         id: 6,
         title: "Subsut",
@@ -70,7 +71,7 @@ const Home = () => {
                 })}
             </div>
 
-
+            <Loader2 />
         </div>
     )
 }

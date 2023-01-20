@@ -16,15 +16,13 @@ const PaletteCard = (props) => {
           </div>)
         })}
 
-
-
       </div>
       <div className="palette-bottom">
         <button>
           <FaRegHeart size={20} /> <p>{props.data.likes}</p>
         </button>
         <button className='more-info'>
-          <Link to='/palette-zoom'><BsThreeDots className='more-info' size={30} /></Link>
+          <Link to={`/palette/${props.data.id}`}><BsThreeDots className='more-info' size={30} /></Link>
         </button>
       </div>
     </div>
