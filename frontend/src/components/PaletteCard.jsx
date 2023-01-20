@@ -1,5 +1,7 @@
 import React from 'react'
 import { FaRegHeart } from 'react-icons/fa'
+import { BsThreeDots } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 
 const PaletteCard = (props) => {
 
@@ -21,7 +23,9 @@ const PaletteCard = (props) => {
         <button>
           <FaRegHeart size={20} /> <p>{props.data.likes}</p>
         </button>
-        <p>{props.data.title}</p>
+        <button className='more-info'>
+          <Link to='/palette-zoom'><BsThreeDots className='more-info' size={30} /></Link>
+        </button>
       </div>
     </div>
   )
