@@ -96,15 +96,15 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
             <li><RxCross2 onClick={() => {
                 let result = filterColorsArray.filter((data, index) => color !== data);
                 setFilterColorsArray(result);
-            }} color={'white'} size={50} />
+            }} color={'white'} size={20} />
             </li>
             <li><AiOutlineUndo onClick={() => {
                 setFilterColorsArray(colorsArray)
-            }} color={'white'} size={50} />
+            }} color={'white'} size={20} />
             </li>
             <li><MdContentCopy onClick={() => {
                 navigator.clipboard.writeText(color)
-            }} color={'white'} size={50} />
+            }} color={'white'} size={20} />
             </li>
         </ul>
     )

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
-import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import PaletteZoom from './components/PaletteZoom';
@@ -12,7 +12,7 @@ import './sass/App.scss';
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Navbar />
       {/* <div className="container"></div> */}
       <Routes>
         <Route path='/' element={<Home />}/>

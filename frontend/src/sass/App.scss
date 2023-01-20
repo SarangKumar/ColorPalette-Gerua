@@ -81,6 +81,11 @@ body {
             color: $primary;
             cursor: pointer;
           }
+
+        }
+
+        .navlink-active {
+          color: $primary;
         }
       }
     }
@@ -325,7 +330,8 @@ body {
     @include flexBox($flexDirection: row, $justifyContent: flex-end);
 
     p {
-      font-size: 0.8rem
+      font-size: 0.8rem;
+      font-weight: 600;
     }
 
     .likes {
@@ -349,7 +355,7 @@ body {
         font-weight: 500;
         color: $textColorDark;
         flex: 1 1 0;
-        
+
         >p {
           @include flexBox($colGap: 0, $rowGap: 0);
           color: $textColorLight;
@@ -361,31 +367,32 @@ body {
       }
 
       .options {
-        @include flexBox();
+        @include flexBox;
         height: 100%;
 
         .toolbar {
-          @include flexBox($flexDirection: row, $rowGap: 1rem, $colGap: 3rem);
+          @include flexBox;
           background-color: rgba(126, 126, 126, 0.511);
           width: 2.3rem;
-          padding: 0.5rem 0.5rem;
           border-radius: 0.5rem;
           display: none;
+          padding: 0.5rem;
           transition: $transition;
 
-
           li {
-            list-style: none;
             @include flexBox;
-            // padding: 0.3rem;
-          }
+            list-style: none;
+            display: inline;
 
-          svg {
-            transition: $transition;
 
-            &:hover {
-              cursor: pointer;
-              transform: scale(1.2);
+            svg {
+              transition: $transition;
+              margin: 0.5rem 0;
+
+              &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+              }
             }
           }
         }
@@ -395,18 +402,11 @@ body {
         }
 
       }
-
-      @media only screen and (max-width: 980px) {
-        @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0, $alignItems: stretch);
-        width: 100vw;
-        // height: 10vh;
-      }
     }
 
   }
 
   // home
-
   .home {
     .container {
       @include flexBox($rowGap: 4rem, $colGap: 4rem);
@@ -414,4 +414,52 @@ body {
     }
   }
 
+}
+
+@media only screen and (max-width: 980px) {
+
+  .App {
+    .palette-container {
+      .palette-zoom {
+        @include flexBox($flexDirection: column, $colGap: 0, $rowGap: 0, $alignItems: stretch);
+        width: 100vw;
+
+        .zoom-palette-color {
+
+          .options {
+            @include flexBox;
+            transition: $transition;
+
+            .toolbar {
+              @include flexBox($flexDirection: column);
+              width: fit-content;
+              transform: translateY(-50%);
+              height: 2.3rem;
+              display: none;
+
+              li {
+                @include flexBox;
+                list-style: none;
+                display: inline;
+                padding: 0 1rem;
+
+                svg {
+                  transform: translateY(-40%);
+
+                  &:hover {
+                    cursor: pointer;
+                    transform: translateY(-40%) scale(1.2);
+                  }
+                }
+              }
+            }
+
+            &:hover .toolbar {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
 }
