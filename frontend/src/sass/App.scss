@@ -176,11 +176,11 @@ body {
     box-shadow: $boxShadow1;
     padding: 2rem 0 2rem;
     margin-top: 5rem;
-    width: 100%;
+    @include flexBox($flexDirection: row, $justifyContent: space-evenly);
+    width: 100vw;
 
     .top {
       @include flexBox($justifyContent: flex-start);
-      margin-left: 2rem;
       font-size: 0.8rem;
 
       h1 {
@@ -192,8 +192,6 @@ body {
     .bottom {
       @include flexBox($justifyContent: flex-end, $colGap: 2rem);
       font-size: 0.8rem;
-      margin-right: 2rem;
-      margin-top: 1rem;
       transition: $transition;
 
       .links {
@@ -211,11 +209,9 @@ body {
           .footer-icons {
             color: $textColorDark;
             transition: $transition;
-
           }
 
           &:hover {
-            // scale: 1.5;
             transform: scale(1.5);
           }
         }
