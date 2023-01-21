@@ -14,6 +14,7 @@ const PaletteZoom = () => {
     })
 
 
+
     const colorData = data[0];
     const [colorsArray, setColorsArray] = useState(colorData.colors);
     const [filterColorsArray, setFilterColorsArray] = useState(colorData.colors);
@@ -45,7 +46,10 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
         <ul className="toolbar">
             <li><RxCross2 onClick={() => {
                 let result = filterColorsArray.filter((data, index) => color !== data);
-                setFilterColorsArray(result);
+                if (result.length !== 0) {
+                    setFilterColorsArray(result);
+                    console.log(result.length)
+                }
             }} color={'white'} size={20} />
             </li>
             <li><AiOutlineUndo onClick={() => {

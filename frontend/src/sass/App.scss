@@ -16,15 +16,15 @@
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-  background-color: $textColorDark
+  background-color: #a4a4a4;
 }
 
 
@@ -33,16 +33,12 @@ a {
   color: $primary;
 }
 
-body {
-  height: 100vh;
-  background-color: $bg;
-}
 
 .App {
-  // background-color: $primary;
   transition: $transition;
-  @include flexBox($flexDirection: column, $justifyContent: space-between);
+  @include flexBox;
   height: 100%;
+
 
   // navigation
 
@@ -50,11 +46,12 @@ body {
     padding: 1rem 1rem;
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
     @include flexBox($justifyContent: space-between);
-    background-color: $bg;
+    background-color: $bgWhite;
     position: sticky;
     width: 100vw;
     top: 0;
-    box-shadow: $boxShadowNeumorph;
+    // box-shadow: $boxShadowNeumorph;
+    box-shadow: $boxShadow1;
     z-index: 3;
 
     a {
@@ -72,7 +69,7 @@ body {
 
 
     ul {
-      @include flexBox($colGap: 2rem);
+      @include flexBox($colGap: 1rem);
 
       >li {
         list-style: none;
@@ -80,7 +77,7 @@ body {
 
         a {
           color: $textColorDark;
-          padding: 0.5rem 1rem;
+          padding: 0.5rem 0.8rem;
           border-radius: 5px;
 
           &:active,
@@ -92,7 +89,7 @@ body {
 
         .navlink-active {
           color: $primary;
-          box-shadow: $boxShadowNeumorph;
+          // box-shadow: $boxShadowNeumorph;
         }
       }
     }
@@ -138,10 +135,10 @@ body {
         width: 1.5rem;
         background-color: $primary;
         border-radius: 50%;
-        
+
         //updown animation
         // animation: updown 600ms linear infinite alternate;
-        
+
         //scale-updown animation
         animation: scale-updown 600ms linear infinite alternate;
       }
@@ -190,6 +187,8 @@ body {
     margin-top: 5rem;
     @include flexBox($flexDirection: row, $justifyContent: space-evenly);
     width: 100vw;
+    background-color: $bg;
+    ;
 
     .top {
       @include flexBox($justifyContent: flex-start);
@@ -211,35 +210,35 @@ body {
         @include flexBox();
         transition: $transition;
         margin-left: 1rem;
-        
+
         a {
           @include flexBox();
           transition: $transition;
           border-radius: 50%;
           width: 2rem;
           height: 2rem;
-          background-color: $secondary;
-          
+
           .footer-icons {
             color: $textColorDark;
             transition: $transition;
           }
-          
+
           &:hover {
             transform: scale(1.1);
             box-shadow: $boxShadowNeumorph;
+            background-color: $secondary;
           }
         }
       }
     }
   }
-  
+
   // color-palette
-  
+
   .palette-box {
     max-width: 12rem;
     border-radius: 20px;
-    
+
     .palette {
       border-radius: 20px;
       @include flexBox($rowGap: 0, $colGap: 0);
@@ -253,7 +252,7 @@ body {
         transition: $transition;
         color: transparent;
         z-index: 1;
-        
+
         &:hover {
           transform: scale(1.1);
           cursor: pointer;
@@ -261,20 +260,20 @@ body {
           z-index: 2;
         }
       }
-      
+
       .palette-color:nth-child(1) {
         border-radius: 20px 20px 0 0;
       }
-      
+
       .palette-color:nth-child(5) {
         border-radius: 0 0 20px 20px;
       }
     }
-    
+
     .palette-bottom {
       padding: 0 10px;
       @include flexBox($justifyContent: space-between);
-      
+
       button {
         @include flexBox($justifyContent: flex-start, $colGap: 0.5rem);
         z-index: 2;
@@ -283,7 +282,7 @@ body {
         padding: 6px 10px;
         border-radius: 5px;
         transition: $transition;
-        background-color: $bg;
+        background-color: $bgWhite;
         height: fit-content;
 
         a {
@@ -294,12 +293,13 @@ body {
 
         &:hover {
           background-color: rgb(187, 187, 187);
-          box-shadow: $boxShadowNeumorph;
-          
+          // box-shadow: $boxShadowNeumorph;
+          cursor: pointer;
         }
       }
 
       .more-info {
+        @include flexBox;
         background-color: transparent;
       }
     }
@@ -311,7 +311,7 @@ body {
     .page-not-found {
       @include flexBox($flexDirection: row);
       overflow: auto;
-      
+
       h2 {
         border-right: 2px solid $primary;
         padding-right: 1rem;
@@ -326,14 +326,14 @@ body {
     .links {
       @include flexBox;
       margin: 2rem;
-      
+
       button {
         padding: 0.5rem 0.9rem;
         border-radius: 5px;
         background-color: $bg;
         border: none;
         box-shadow: $boxShadow1;
-        
+
         a {
           color: $textColorLight;
         }
@@ -428,6 +428,22 @@ body {
     .container {
       @include flexBox($rowGap: 4rem, $colGap: 4rem);
       margin: 100px 10vw;
+    }
+
+    .load-more-btn {
+      border: 1px solid rgba(29, 29, 29, 0.288);
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      @include flexBox;
+      background-color: transparent;
+
+      &:hover {
+        cursor: pointer;
+        box-shadow: $boxShadow1;
+      }
     }
   }
 

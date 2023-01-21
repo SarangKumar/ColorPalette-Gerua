@@ -10,8 +10,8 @@ const Header = () => {
         </h3>
       </NavLink>
       <ul>
-        <li><NavLink to='/' className={({isActive}) => (isActive && 'navlink-active')}>Home</NavLink></li>
-        <li><NavLink to='/solid-color' className={({isActive}) => (isActive && 'navlink-active')}>Solid Colors</NavLink></li>
+        <li><NavLink to='/' className={({isActive}) => (isActive ? 'navlink-active': null)}>Home</NavLink></li>
+        <li><NavLink to='/solid-color' className={({isActive}) => (isActive ? 'navlink-active': null)}>Solid Colors</NavLink></li>
       </ul>
     </nav>
   )
