@@ -11,7 +11,9 @@ const PaletteCard = (props) => {
         {props.data.colors.map((color, index) => {
           return (
             <div key={index} onClick={() => {
-              navigator.clipboard.writeText(color)
+              navigator.clipboard.writeText(color);
+              // document.getElementsByClassName('palette-box')[2].getElementsByClassName('palette-color')[index].innerText = 'copied!';
+              // setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
             }} className='palette-color' style={{ backgroundColor: color }}>
               <p>{color}</p>
             </div>)

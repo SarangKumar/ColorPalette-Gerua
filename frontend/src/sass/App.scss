@@ -35,6 +35,7 @@ a {
 
 body {
   height: 100vh;
+  background-color: $bg;
 }
 
 .App {
@@ -43,28 +44,32 @@ body {
   @include flexBox($flexDirection: column, $justifyContent: space-between);
   height: 100%;
 
-  // header
+  // navigation
+
   .header {
     padding: 1rem 1rem;
     border-bottom: 1px solid rgba(29, 29, 29, 0.1);
     @include flexBox($justifyContent: space-between);
-    box-shadow: $boxShadow1;
-    background-color: #fff;
+    background-color: $bg;
     position: sticky;
     width: 100vw;
     top: 0;
+    box-shadow: $boxShadowNeumorph;
+    z-index: 3;
 
     a {
       font-size: 0.85rem;
-    }
+      color: $textColorDark;
 
-    >h3 {
-      font-size: 1.5rem;
+      >h3 {
+        font-size: 1.5rem;
 
-      >b {
-        color: $primary;
+        >b {
+          color: $primary;
+        }
       }
     }
+
 
     ul {
       @include flexBox($colGap: 2rem);
@@ -75,17 +80,19 @@ body {
 
         a {
           color: $textColorDark;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
 
           &:active,
           &:hover {
             color: $primary;
             cursor: pointer;
           }
-
         }
 
         .navlink-active {
           color: $primary;
+          box-shadow: $boxShadowNeumorph;
         }
       }
     }
@@ -131,8 +138,10 @@ body {
         width: 1.5rem;
         background-color: $primary;
         border-radius: 50%;
+        
         //updown animation
         // animation: updown 600ms linear infinite alternate;
+        
         //scale-updown animation
         animation: scale-updown 600ms linear infinite alternate;
       }
@@ -189,18 +198,20 @@ body {
       h1 {
         font-weight: 600;
         font-size: 1.3rem;
+        text-transform: uppercase;
       }
     }
 
     .bottom {
-      @include flexBox($justifyContent: flex-end, $colGap: 2rem);
+      @include flexBox($justifyContent: flex-end, $colGap: 0rem);
       font-size: 0.8rem;
       transition: $transition;
 
       .links {
         @include flexBox();
         transition: $transition;
-
+        margin-left: 1rem;
+        
         a {
           @include flexBox();
           transition: $transition;
@@ -208,26 +219,27 @@ body {
           width: 2rem;
           height: 2rem;
           background-color: $secondary;
-
+          
           .footer-icons {
             color: $textColorDark;
             transition: $transition;
           }
-
+          
           &:hover {
-            transform: scale(1.5);
+            transform: scale(1.1);
+            box-shadow: $boxShadowNeumorph;
           }
         }
       }
     }
   }
-
+  
   // color-palette
-
+  
   .palette-box {
     max-width: 12rem;
     border-radius: 20px;
-
+    
     .palette {
       border-radius: 20px;
       @include flexBox($rowGap: 0, $colGap: 0);
@@ -240,35 +252,38 @@ body {
         padding: 1rem;
         transition: $transition;
         color: transparent;
-
+        z-index: 1;
+        
         &:hover {
           transform: scale(1.1);
           cursor: pointer;
           color: $textColorDark;
+          z-index: 2;
         }
       }
-
+      
       .palette-color:nth-child(1) {
         border-radius: 20px 20px 0 0;
       }
-
+      
       .palette-color:nth-child(5) {
         border-radius: 0 0 20px 20px;
       }
     }
-
+    
     .palette-bottom {
       padding: 0 10px;
       @include flexBox($justifyContent: space-between);
-
+      
       button {
         @include flexBox($justifyContent: flex-start, $colGap: 0.5rem);
+        z-index: 2;
         outline: none;
         border: none;
         padding: 6px 10px;
         border-radius: 5px;
         transition: $transition;
-        background-color: rgb(235, 235, 235);
+        background-color: $bg;
         height: fit-content;
 
         a {
@@ -279,6 +294,8 @@ body {
 
         &:hover {
           background-color: rgb(187, 187, 187);
+          box-shadow: $boxShadowNeumorph;
+          
         }
       }
 
@@ -294,7 +311,7 @@ body {
     .page-not-found {
       @include flexBox($flexDirection: row);
       overflow: auto;
-
+      
       h2 {
         border-right: 2px solid $primary;
         padding-right: 1rem;
@@ -309,14 +326,14 @@ body {
     .links {
       @include flexBox;
       margin: 2rem;
-
+      
       button {
         padding: 0.5rem 0.9rem;
         border-radius: 5px;
-        background-color: $primary;
+        background-color: $bg;
         border: none;
         box-shadow: $boxShadow1;
-
+        
         a {
           color: $textColorLight;
         }
@@ -415,6 +432,8 @@ body {
   }
 
 }
+
+// media queries
 
 @media only screen and (max-width: 980px) {
 
