@@ -31,7 +31,7 @@ const PaletteZoom = () => {
 
             <div className='palette-zoom'>
                 {filterColorsArray.map((color, index) => <div key={index} style={{ backgroundColor: color }} className='zoom-palette-color'>
-                    <p>{color}</p>
+                    <p>{color.substring(1,7).toUpperCase()}</p>
                     <div className="options">
                         <Toolbar color={color} setFilterColorsArray={setFilterColorsArray} filterColorsArray={filterColorsArray} colorsArray={colorsArray} setColorsArray={setColorsArray} />
                     </div>

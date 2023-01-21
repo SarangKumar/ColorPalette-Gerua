@@ -258,6 +258,10 @@ a {
           color: $textColorDark;
           z-index: 2;
         }
+
+        // p{
+
+        // }
       }
 
       .palette-color:nth-child(1) {
@@ -442,8 +446,7 @@ a {
 
       &:hover {
         cursor: pointer;
-        box-shadow: $boxShadow1;
-        background-color: rgb(187, 187, 187);
+        background-color: rgb(218, 218, 218);
       }
     }
   }

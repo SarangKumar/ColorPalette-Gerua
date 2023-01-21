@@ -15,7 +15,7 @@ const PaletteCard = (props) => {
               document.getElementsByClassName('palette-color')[index].innerText = 'copied!';
               setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
             }} className='palette-color' style={{ backgroundColor: color }}>
-              <p>{color}</p>
+              <p>{color.substring(1,7).toUpperCase()}</p>
             </div>)
         })}
 
