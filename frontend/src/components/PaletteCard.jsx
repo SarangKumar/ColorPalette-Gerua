@@ -22,7 +22,7 @@ const PaletteCard = (props) => {
       </div>
       <div className="palette-bottom">
         <button>
-          <FaRegHeart size={20} /> <p>{props.data.likes}</p>
+          <FaRegHeart size={15} /> <p>{props.data.likes}</p>
         </button>
         <button className='more-info'>
           <Link to={`/palette/${props.data.id}`}><BsThreeDots className='more-info' size={20} /></Link>

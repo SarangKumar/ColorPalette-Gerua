@@ -67,7 +67,6 @@ a {
       }
     }
 
-
     ul {
       @include flexBox($colGap: 1rem);
 
@@ -97,7 +96,7 @@ a {
 
   //hero
   .hero {
-    margin: 6rem 0 5rem;
+    margin: 4rem 0 3.5rem;
     text-align: center;
 
     >h1 {
@@ -236,7 +235,7 @@ a {
   // color-palette
 
   .palette-box {
-    max-width: 12rem;
+    max-width: 13.5rem;
     border-radius: 20px;
 
     .palette {
@@ -248,7 +247,7 @@ a {
         @include flexBox();
         width: 100%;
         flex: 1 1 auto;
-        padding: 1rem;
+        padding: 0.9rem;
         transition: $transition;
         color: transparent;
         z-index: 1;
@@ -262,11 +261,11 @@ a {
       }
 
       .palette-color:nth-child(1) {
-        border-radius: 20px 20px 0 0;
+        border-radius: 15px 15px 0 0;
       }
 
       .palette-color:nth-child(5) {
-        border-radius: 0 0 20px 20px;
+        border-radius: 0 0 15px 15px;
       }
     }
 
@@ -284,6 +283,7 @@ a {
         transition: $transition;
         background-color: $bgWhite;
         height: fit-content;
+        font-size: 0.6rem;
 
         a {
           color: $textColorDark;
@@ -443,6 +443,7 @@ a {
       &:hover {
         cursor: pointer;
         box-shadow: $boxShadow1;
+        background-color: rgb(187, 187, 187);
       }
     }
   }

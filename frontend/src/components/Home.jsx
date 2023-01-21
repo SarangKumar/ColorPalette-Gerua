@@ -7,7 +7,7 @@ import { AiOutlineUndo } from 'react-icons/ai';
 
 const Home = () => {
 
-    const [visibleItems, setVisibleItems] = useState(4);
+    const [visibleItems, setVisibleItems] = useState(16);
 
     const loadmore = () => {
         setVisibleItems(prev => prev + 4)
