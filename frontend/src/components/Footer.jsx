@@ -5,13 +5,12 @@ const Footer = () => {
     return (
         <footer className='footer'>
             <div className="top">
-                <h1>Colors UI</h1>
+                <h1>GERUA</h1>
                 <p>© Colors UI by <a href='/'>Sarang Kumar</a></p>
             </div>
             <div className="bottom">
                 <p>Privacy Policy</p>
                 <div className="links">
-
                     <a href="https://github.com/SarangKumar/Color-palette">
                         <FaGithub className='footer-icons' size={19} />
                     </a>

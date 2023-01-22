@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { IoIosArrowBack } from 'react-icons/io'
-import { AiFillHome } from 'react-icons/ai'
+import {IoIosArrowBack} from 'react-icons/io'
+import {AiFillHome} from 'react-icons/ai'
 
 const PageNotFound = () => {
   const history = useNavigate();
@@ -15,7 +15,7 @@ const PageNotFound = () => {
       </div>
       <div className='links'>
         <button><Link to='/'>Go to Home</Link><AiFillHome /></button>
-        <button onClick={() => history(-1)}>Go Back<IoIosArrowBack /></button>
+        <button onClick={()=>history(-1)}>Go Back<IoIosArrowBack /></button>
       </div>
     </div>
   )

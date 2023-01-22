@@ -50,22 +50,8 @@ a {
     position: sticky;
     width: 100vw;
     top: 0;
-    // box-shadow: $boxShadowNeumorph;
     box-shadow: $boxShadow1;
     z-index: 3;
-
-    a {
-      font-size: 0.85rem;
-      color: $textColorDark;
-
-      >h3 {
-        font-size: 1.5rem;
-
-        >b {
-          color: $primary;
-        }
-      }
-    }
 
     ul {
       @include flexBox($colGap: 1rem);
@@ -337,15 +323,35 @@ a {
         padding: 0.5rem 1rem;
         @include flexBox;
         background-color: transparent;
-
+        transition: $transition;
+        
         a {
-          color: $textColorDark;
+          color: $bgWhite;
+          transition: $transition;
         }
 
         &:hover {
           cursor: pointer;
           background-color: rgb(218, 218, 218);
+          color: $textColorDark;
         }
+      }
+
+      button:nth-child(1) {
+        color: $bgWhite;
+        background-color: $primary;
+        border: none;
+
+        &:hover {
+          background-color: rgb(218, 218, 218);
+          color: $textColorDark;
+        border: 1px solid rgba(29, 29, 29, 0.288);
+        }
+
+        &:hover a {
+          color: $textColorDark;
+        }
+
       }
     }
   }

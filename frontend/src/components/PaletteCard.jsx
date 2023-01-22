@@ -2,6 +2,9 @@ import React from 'react'
 import { FaRegHeart } from 'react-icons/fa'
 import { BsThreeDots } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { buttonVariants } from '../utils/Variants'
+
 
 const PaletteCard = (props) => {
 
@@ -10,13 +13,13 @@ const PaletteCard = (props) => {
       <div className='palette'>
         {props.data.colors.map((color, index) => {
           return (
-            <div key={index} onClick={() => {
+            <motion.div variants={buttonVariants} whileHover='hover' key={index} onClick={() => {
               navigator.clipboard.writeText(color);
               document.getElementsByClassName('palette-color')[index].innerText = 'copied!';
               setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
             }} className='palette-color' style={{ backgroundColor: color }}>
               <p>{color.substring(1,7).toUpperCase()}</p>
-            </div>)
+            </motion.div>)
         })}
 
       </div>

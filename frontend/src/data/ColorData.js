@@ -26,47 +26,48 @@ const ColorPaletteData = [{
 }, {
     id: 6,
     title: "Flash",
-    colors: ["#1c2130", "#028f76", "#b3e099", "#ffeaad", "#d14334"]
+    colors: ["#1c2130", "#028f76", "#b3e099", "#ffeaad", "#d14334"],
+    likes: 30,
 }, {
     id: 7,
     title: "Aqua",
     colors: ["#f2e3c6", "#ffc6a5", "#0d6759", "#7ab317", "#a0c55f"],
-    likes: 20,
+    likes: 42,
 }, {
     id: 8,
     title: "Metallic",
     colors: ["#b9d7d9", "#668284", "#2a2829", "#493736", "#7b3b3b"],
-    likes: 20,
+    likes: 3,
 }, {
     id: 9,
     title: "Sunset",
     colors: ["#300030", "#480048", "#601848", "#c04848", "#f07241"],
-    likes: 20,
+    likes: 2,
 }, {
     id: 10,
     title: "Orange sky",
     colors: ["#69d2e7", "#a7dbd8", "#e0e4cc", "#f38630", "#fa6900"],
-    likes: 20,
+    likes: 3,
 }, {
     id: 11,
     title: "Orange sky 2",
     colors: ["#eb9c4d", "#f2d680", "#f3ffcf", "#bac9a9", "#697060"],
-    likes: 20,
+    likes: 25,
 }, {
     id: 12,
     title: "Orange sky",
     colors: ["#f5dd9d", "#bcc499", "#92a68a", "#7b8f8a", "#506266"],
-    likes: 20,
+    likes: 34,
 }, {
     id: 13,
     title: "Orange sky",
     colors: ["#fff3db", "#e7e4d5", "#d3c8b4", "#c84648", "#703e3b"],
-    likes: 20,
+    likes: 55,
 }, {
     id: 14,
     title: "Orange sky",
     colors: ["#8d7966", "#a8a39d", "#d8c8b8", "#e2ddd9", "#f8f1e9"],
-    likes: 20,
+    likes: 78,
 }, {
     id: 15,
     title: "Orange sky",

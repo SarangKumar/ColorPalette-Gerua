@@ -1,8 +1,11 @@
+import { motion } from 'framer-motion'
 import React from 'react'
+import { heroVariants } from '../utils/Variants'
+
 
 const Hero = ({heading, para1, para2}) => {
     return (
-        <div className='hero'>
+        <motion.div variate={heroVariants} initial='hidden' animate='visible' className='hero'>
             <h1>{heading}</h1>
             <p>
                 {para1}
@@ -10,7 +13,7 @@ const Hero = ({heading, para1, para2}) => {
             <p>
                 {para2}
             </p>
-        </div>
+        </motion.div>
     )
 }
 
