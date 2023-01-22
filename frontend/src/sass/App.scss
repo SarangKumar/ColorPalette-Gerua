@@ -258,10 +258,6 @@ a {
           color: $textColorDark;
           z-index: 2;
         }
-
-        // p{
-
-        // }
       }
 
       .palette-color:nth-child(1) {
@@ -311,10 +307,15 @@ a {
 
   //page-not-found
   .not-found-container {
+    @include flexBox($flexDirection: column);
+
+    h1 {
+      font-size: 5rem;
+      margin: 2rem 0 1rem;
+    }
 
     .page-not-found {
-      @include flexBox($flexDirection: row);
-      overflow: auto;
+      @include flexBox;
 
       h2 {
         border-right: 2px solid $primary;
@@ -329,17 +330,21 @@ a {
 
     .links {
       @include flexBox;
-      margin: 2rem;
 
       button {
-        padding: 0.5rem 0.9rem;
+        border: 1px solid rgba(29, 29, 29, 0.288);
         border-radius: 5px;
-        background-color: $bg;
-        border: none;
-        box-shadow: $boxShadow1;
+        padding: 0.5rem 1rem;
+        @include flexBox;
+        background-color: transparent;
 
         a {
-          color: $textColorLight;
+          color: $textColorDark;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: rgb(218, 218, 218);
         }
       }
     }

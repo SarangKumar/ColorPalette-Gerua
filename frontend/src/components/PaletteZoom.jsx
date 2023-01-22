@@ -9,13 +9,9 @@ import ColorPaletteData from '../data/ColorData'
 const PaletteZoom = () => {
 
     const colorID = useParams().id;
-    const data = ColorPaletteData.filter((colorPalette) => {
-        if (colorPalette.id === parseInt(colorID)) { return colorPalette };
-    })
+    const colorData = ColorPaletteData.find(colorPalette => (colorPalette.id === parseInt(colorID)))
 
-
-
-    const colorData = data[0];
+    console.log(colorData);
     const [colorsArray, setColorsArray] = useState(colorData.colors);
     const [filterColorsArray, setFilterColorsArray] = useState(colorData.colors);
 
