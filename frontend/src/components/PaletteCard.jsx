@@ -15,8 +15,8 @@ const PaletteCard = (props) => {
           return (
             <motion.div variants={buttonVariants} whileHover='hover' key={index} onClick={() => {
               navigator.clipboard.writeText(color);
-              document.getElementsByClassName('palette-color')[index].innerText = 'copied!';
-              setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
+              // document.getElementsByClassName('palette-color')[index].innerText = 'copied!';
+              // setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
             }} className='palette-color' style={{ backgroundColor: color }}>
               <p>{color.substring(1,7).toUpperCase()}</p>
             </motion.div>)

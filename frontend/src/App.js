@@ -5,8 +5,9 @@ import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import PaletteZoom from './components/PaletteZoom';
 import SolidColors from './components/SolidColors';
-import './sass/App.scss';
+import Hero from './components/Hero';
 
+import './sass/App.scss';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path='/solid-color' element={<SolidColors />}/>
         <Route path='/palette-zoom' element={<PaletteZoom />}/>
         <Route path='/palette/:id' element={<PaletteZoom />}/>
+        <Route path='/motion' element={<Hero heading='123' para1='sarang' para2='kumar'/>}/>
         <Route path='*' element={<PageNotFound />}/>
       </Routes>      
       {/* <Loader /> */}

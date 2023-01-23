@@ -41,18 +41,20 @@ export const heroVariants = {
         y: '-100vh'
     },
     visible: {
-        y: 0,
+        y: 10,
         transition: {
-            duration: 1
+            delay: 0.5,
+            x: { duration: 1 },
+            default: { ease: "linear" }
         }
     }
 }
 
 export const containerVariants = {
-    hidden:{
+    hidden: {
         opacity: 0
     },
     visible: {
-        opacity:1
+        opacity: 1
     }
 }
