@@ -6,7 +6,9 @@ import { useParams } from 'react-router-dom';
 
 
 const Tint = () => {
+
   const colorHex = useParams().colorHex;
+
   console.log(colorHex);
 
   const [color, setColor] = useState(`#${colorHex}`);
@@ -23,6 +25,7 @@ const Tint = () => {
     console.log(shadeList);
 
   }
+
 
   return (
     <div className='tint-shade-container'>
@@ -87,7 +90,7 @@ export default Tint
 const TintColor = ({ rgb, weight }) => {
   return (
     <div className='tint-color' style={{ backgroundColor: `${rgb}` }} >
-      <MdContentCopy className='copy-icon' size={26} onClick={() =>
+      <MdContentCopy className='copy-icon' size={24} onClick={() =>
         navigator.clipboard.writeText(rgb)
       } />
       <div className="data">
@@ -100,7 +103,7 @@ const TintColor = ({ rgb, weight }) => {
 const ShadeColor = ({ rgb, weight }) => {
   return (
     <div className='shade-color' style={{ backgroundColor: `${rgb}` }} >
-      <MdContentCopy className='copy-icon' size={26} onClick={() =>
+      <MdContentCopy className='copy-icon' size={24} onClick={() =>
         navigator.clipboard.writeText(rgb)
       } />
       <div className="data">
