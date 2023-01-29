@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Values from 'values.js'
 import Hero from './Hero';
-
-
-
+import { MdContentCopy } from 'react-icons/md';
 
 const Tint = () => {
   const [color, setColor] = useState('#ff0000');
@@ -40,37 +38,47 @@ const Tint = () => {
 
       <form onSubmit={handleTintShade}>
         <input type="color" className='input-color' value={color} onChange={e => setColor(e.target.value)} />
-        <input type="text" value={color} onChange={e => setColor(e.target.value)} className='input-text' />
+        <input type="text" value={color} onChange={e => (e.target.value)} className='input-text' />
         <input type="submit" value="Submit" className="input-btn" />
       </form>
 
 
-      <div className='tint-color-box'>
+      <div className="container">
 
-        {tintList.map((colorObj, index) => {
+        <div className="title">
+          <h1>Tints</h1>
+        </div>
 
-          const type = colorObj.type;
-          const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
-          const weight = colorObj.weight;
+        <div className='tint-color-box'>
+          {tintList.map((colorObj, index) => {
 
-          return (
-            <TintColor key={index} rgb={rgb} weight={weight} type={type} />
-          )
-        })}
-      </div>
+            const type = colorObj.type;
+            const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
+            const weight = colorObj.weight;
 
-      <div className='shade-color-box'>
+            return (
+              <TintColor key={index} rgb={rgb} weight={weight} />
+            )
+          })}
+        </div>
 
-        {shadeList.map((colorObj, index) => {
+        <div className='title'>
+          <h1>Shades</h1>
+        </div>
 
-          const type = colorObj.type;
-          const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
-          const weight = colorObj.weight;
+        <div className='shade-color-box'>
 
-          return (
-            <ShadeColor key={index} rgb={rgb} weight={weight} type={type} />
-          )
-        })}
+          {shadeList.map((colorObj, index) => {
+
+            const type = colorObj.type;
+            const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
+            const weight = colorObj.weight;
+
+            return (
+              <ShadeColor key={index} rgb={rgb} weight={weight} />
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -81,18 +89,28 @@ export default Tint
 
 
 
-const TintColor = ({ rgb, weight, type }) => {
+const TintColor = ({ rgb, weight }) => {
   return (
     <div className='tint-color' style={{ backgroundColor: `${rgb}` }} >
-
+      <MdContentCopy className='copy-icon' size={26} onClick={() =>
+        navigator.clipboard.writeText(rgb)
+      } />
+      <div className="data">
+        weight: {weight}
+      </div>
     </div>
   )
 }
 
-const ShadeColor = ({ rgb, weight, type }) => {
+const ShadeColor = ({ rgb, weight }) => {
   return (
     <div className='shade-color' style={{ backgroundColor: `${rgb}` }} >
-
+      <MdContentCopy className='copy-icon' size={26} onClick={() =>
+        navigator.clipboard.writeText(rgb)
+      } />
+      <div className="data">
+        weight: {weight}
+      </div>
     </div>
   )
 }

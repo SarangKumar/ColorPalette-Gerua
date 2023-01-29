@@ -476,6 +476,7 @@ a {
         border-radius: 50%;
         overflow: hidden;
         border: none;
+        cursor: pointer;
       }
 
       .input-color::-webkit-color-swatch {
@@ -494,7 +495,13 @@ a {
         border: 1px solid rgba(29, 29, 29, 0.288);
         border-radius: 5px;
         padding: 0.5rem 1rem;
-        position: relative;
+        min-width: 40%;
+
+        &:active,
+        &:focus-within,
+        &:focus {
+          border: 1px solid $primary;
+        }
       }
 
       .input-btn {
@@ -506,30 +513,88 @@ a {
       }
     }
 
-    .tint-color-box {
+    .container {
       margin: 2rem;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(6.75rem, 1fr));
-      grid-gap: 10px;
+      @include flexBox($flexDirection: column, $rowGap: 1rem, $colGap: 1rem);
 
-      .tint-color {
-        height: 4.75rem;
-        width: 6.75rem;
-        border-radius: 10px;
+      .title {
+        width: 100%;
+
+        h1 {
+          margin: 0.5rem 2rem;
+          font-weight: 600;
+        }
       }
-    }
 
-    .shade-color-box {
-      margin: 2rem;
-      display: grid;
-      grid-template-columns: repeat(6, minmax(6.75rem, 1fr));
-      grid-gap: 10px;
+      .tint-color-box {
+        @include flexBox($rowGap: 1rem, $colGap: 1rem);
+        max-width: 50rem;
 
-      .shade-color {
-        height: 4.75rem;
-        width: 6.75rem;
-        border-radius: 10px;
+        .tint-color {
+          position: relative;
+          @include flexBox;
+          height: 5rem;
+          width: 7rem;
+          border-radius: 10px;
+          transition: $transition;
+          
+          .copy-icon {
+            transition: $transition;
+            color: $textColorLight;
+            display: none;
+            cursor: pointer;
 
+          }
+
+          .data {
+            position: absolute;
+            color: $textColorLight;
+            bottom: 0;
+            font-size: 0.6rem;
+            display: none;
+          }
+
+          &:hover .copy-icon,
+          &:hover .data {
+            display: block;
+          }
+        }
+      }
+
+      .shade-color-box {
+        @include flexBox($rowGap: 1rem, $colGap: 1rem);
+        max-width: 50rem;
+
+        @include flexBox;
+
+        .shade-color {
+          position: relative;
+          @include flexBox;
+          height: 5rem;
+          width: 7rem;
+          border-radius: 10px;
+
+          .copy-icon {
+            color: $textColorLight;
+            display: none;
+            bottom: 3px;
+            cursor: pointer;
+          }
+
+          .data {
+            position: absolute;
+            color: $textColorLight;
+            bottom: 3px;
+            font-size: 0.6rem;
+            display: none;
+          }
+
+          &:hover .copy-icon,
+          &:hover .data {
+            display: block;
+          }
+
+        }
       }
     }
   }
