@@ -8,7 +8,7 @@ import SolidColors from './components/SolidColors';
 import Hero from './components/Hero';
 
 import './sass/App.scss';
-
+import TintShade from './components/TintShade';
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Route path='/solid-color' element={<SolidColors />}/>
         <Route path='/palette-zoom' element={<PaletteZoom />}/>
         <Route path='/palette/:id' element={<PaletteZoom />}/>
+        <Route path='/tint-and-shade-generator' element={<TintShade />}/>
         <Route path='/motion' element={<Hero heading='123' para1='sarang' para2='kumar'/>}/>
         <Route path='*' element={<PageNotFound />}/>
       </Routes>      

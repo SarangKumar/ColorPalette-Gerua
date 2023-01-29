@@ -324,7 +324,7 @@ a {
         @include flexBox;
         background-color: transparent;
         transition: $transition;
-        
+
         a {
           color: $bgWhite;
           transition: $transition;
@@ -345,7 +345,7 @@ a {
         &:hover {
           background-color: rgb(218, 218, 218);
           color: $textColorDark;
-        border: 1px solid rgba(29, 29, 29, 0.288);
+          border: 1px solid rgba(29, 29, 29, 0.288);
         }
 
         &:hover a {
@@ -462,6 +462,77 @@ a {
     }
   }
 
+  .tint-shade-container {
+
+    form {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      column-gap: 0.51rem;
+
+      .input-color {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        overflow: hidden;
+        border: none;
+      }
+
+      .input-color::-webkit-color-swatch {
+        border: none;
+        border-radius: 50%;
+        padding: 0;
+      }
+
+      .input-color::-webkit-color-swatch-wrapper {
+        border: none;
+        border-radius: 50%;
+        padding: 0;
+      }
+
+      .input-text {
+        border: 1px solid rgba(29, 29, 29, 0.288);
+        border-radius: 5px;
+        padding: 0.5rem 1rem;
+        position: relative;
+      }
+
+      .input-btn {
+        background-color: $primary;
+        color: $textColorLight;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+      }
+    }
+
+    .tint-color-box {
+      margin: 2rem;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(6.75rem, 1fr));
+      grid-gap: 10px;
+
+      .tint-color {
+        height: 4.75rem;
+        width: 6.75rem;
+        border-radius: 10px;
+      }
+    }
+
+    .shade-color-box {
+      margin: 2rem;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(6.75rem, 1fr));
+      grid-gap: 10px;
+
+      .shade-color {
+        height: 4.75rem;
+        width: 6.75rem;
+        border-radius: 10px;
+
+      }
+    }
+  }
 }
 
 // media queries

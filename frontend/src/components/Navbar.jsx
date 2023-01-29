@@ -27,6 +27,7 @@ const Header = () => {
       <ul>
         <li><NavLink to='/' className={({ isActive }) => (isActive ? 'navlink-active' : null)}>Home</NavLink></li>
         <li><NavLink to='/solid-color' className={({ isActive }) => (isActive ? 'navlink-active' : null)}>Solid Colors</NavLink></li>
+        <li><NavLink to='/tint-and-shade-generator' className={({ isActive }) => (isActive ? 'navlink-active' : null)}>Tint and Shade Generator</NavLink></li>
       </ul>
     </nav>
   )
