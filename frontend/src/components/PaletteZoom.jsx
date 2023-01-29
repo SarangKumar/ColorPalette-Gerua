@@ -1,8 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { AiOutlineHeart, AiOutlineUndo } from 'react-icons/ai';
 import { MdContentCopy } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
+import { WiMoonAltThirdQuarter } from 'react-icons/wi';
 import { useState } from 'react';
 import ColorPaletteData from '../data/ColorData'
 
@@ -55,6 +56,8 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
             <li><MdContentCopy onClick={() => {
                 navigator.clipboard.writeText(color)
             }} color={'white'} size={20} />
+            </li>
+            <li><Link to={`/tint-and-shade-generator/${color.slice(1,7)}`}><WiMoonAltThirdQuarter color={'white'} size={20} /></Link>
             </li>
         </ul>
     )

@@ -16,14 +16,13 @@ function App() {
       <Navbar />
       {/* <div className="container"></div> */}
       <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/solid-color' element={<SolidColors />}/>
-        <Route path='/palette-zoom' element={<PaletteZoom />}/>
-        <Route path='/palette/:id' element={<PaletteZoom />}/>
-        <Route path='/tint-and-shade-generator' element={<TintShade />}/>
-        <Route path='/motion' element={<Hero heading='123' para1='sarang' para2='kumar'/>}/>
-        <Route path='*' element={<PageNotFound />}/>
-      </Routes>      
+        <Route path='/' element={<Home />} />
+        <Route path='/solid-color' element={<SolidColors />} />
+        <Route path='/palette-zoom' element={<PaletteZoom />} />
+        <Route path='/palette/:id' element={<PaletteZoom />} />
+        <Route path='/tint-and-shade-generator/:colorHex' element={<TintShade />} />
+        <Route path='*' element={<PageNotFound />} />
+      </Routes>
       {/* <Loader /> */}
       {/* <Loader2 /> */}
       <Footer />

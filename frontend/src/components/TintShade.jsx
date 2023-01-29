@@ -2,22 +2,16 @@ import React, { useEffect, useState } from 'react'
 import Values from 'values.js'
 import Hero from './Hero';
 import { MdContentCopy } from 'react-icons/md';
+import { useParams } from 'react-router-dom';
+
 
 const Tint = () => {
-  const [color, setColor] = useState('#ff0000');
+  const colorHex = useParams().colorHex;
+  console.log(colorHex);
+
+  const [color, setColor] = useState(`#${colorHex}`);
   const [tintList, setTintList] = useState(new Values(color).tints(4));
   const [shadeList, setShadeList] = useState(new Values(color).shades(4));
-
-  // useEffect(() => {
-  //   const randomColor = '#' + (Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6);
-  //   setColor(randomColor);
-  //   console.log(color);
-
-
-  //   setList(new Values(color).all(10));
-  //   console.log(list);
-  // }, [])
-
 
   const handleTintShade = (e) => {
     e.preventDefault();
