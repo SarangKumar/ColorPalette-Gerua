@@ -23,8 +23,8 @@ const PaletteCard = (props) => {
             }} className='palette-color' style={{ backgroundColor: color }}>
               <div className='color-code'>{color.substring(1, 7).toUpperCase()}</div>
               <div className="icons">
-                <Link to={`/tint-and-shade-generator/${color.slice(1, 7)}`}><WiMoonAltThirdQuarter size={15} className='tintshade' /></Link>
-                <MdContentCopy className='copy' size={15} onClick={() => { navigator.clipboard.writeText(color) }} />
+                <Link to={`/tint-and-shade-generator/${color.slice(1, 7)}`}><WiMoonAltThirdQuarter size={18} className='tintshade' /></Link>
+                <MdContentCopy className='copy' size={18} onClick={() => { navigator.clipboard.writeText(color) }} />
               </div>
             </motion.div>)
         })}

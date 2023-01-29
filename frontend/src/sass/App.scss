@@ -236,7 +236,6 @@ a {
         flex: 1 1 auto;
         padding: 0.9rem;
         transition: $transition;
-        // color: transparent;
         z-index: 1;
 
 
@@ -278,7 +277,11 @@ a {
               cursor: pointer;
             }
           }
+        }
 
+        &:hover{
+          z-index: 2;
+          transform: scale(1.2);
         }
       }
 

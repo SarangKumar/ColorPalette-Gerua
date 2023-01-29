@@ -26,12 +26,12 @@ const Tint = () => {
   }
 
   useEffect(() => {
-    console.log(color);
-
     setTintList(new Values(color).tints(Math.floor(100 / tintNumber)));
     setShadeList(new Values(color).shades(Math.floor(100 / shadeNumber)));
-    console.log(tintList);
-    console.log(shadeList);
+    
+    // console.log(color);
+    // console.log(tintList);
+    // console.log(shadeList);
   }, [tintNumber, shadeNumber, color])
 
 
