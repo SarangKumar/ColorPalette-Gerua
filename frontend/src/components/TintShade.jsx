@@ -6,25 +6,33 @@ import { useParams } from 'react-router-dom';
 
 
 const Tint = () => {
-
   const colorHex = useParams().colorHex;
 
-  console.log(colorHex);
-
+  const [tintNumber, setTintNumber] = useState(24);
+  const [shadeNumber, setShadeNumber] = useState(24);
   const [color, setColor] = useState(`#${colorHex}`);
-  const [tintList, setTintList] = useState(new Values(color).tints(4));
-  const [shadeList, setShadeList] = useState(new Values(color).shades(4));
+  const [tintList, setTintList] = useState(new Values(color).tints(Math.floor(100 / tintNumber)));
+  const [shadeList, setShadeList] = useState(new Values(color).shades(Math.floor(100 / shadeNumber)));
 
   const handleTintShade = (e) => {
     e.preventDefault();
+
+    setTintList(new Values(color).tints(Math.floor(100 / tintNumber)));
+    setShadeList(new Values(color).shades(Math.floor(100 / shadeNumber)));
+
+    // console.log(color);
+    // console.log(tintList);
+    // console.log(shadeList);
+  }
+
+  useEffect(() => {
     console.log(color);
 
-    setTintList(new Values(color).tints(4));
-    setShadeList(new Values(color).shades(4));
+    setTintList(new Values(color).tints(Math.floor(100 / tintNumber)));
+    setShadeList(new Values(color).shades(Math.floor(100 / shadeNumber)));
     console.log(tintList);
     console.log(shadeList);
-
-  }
+  }, [tintNumber, shadeNumber, color])
 
 
   return (
@@ -37,9 +45,19 @@ const Tint = () => {
       <form onSubmit={handleTintShade}>
         <input type="color" className='input-color' value={color} onChange={e => setColor(e.target.value)} />
         <input type="text" value={color} onChange={e => (e.target.value)} className='input-text' />
-        <input type="submit" value="Submit" className="input-btn" />
+        {/* <input type="submit" value="Submit" className="input-btn" /> */}
       </form>
 
+      <form className='set-tint-shade-count'>
+        <div className="tint-count">
+          <label htmlFor="">Set number of <span>Tint</span> Colors</label>
+          <input type='number' min="1" max="100" value={tintNumber} onChange={e => setTintNumber(e.target.value)} className='input-number' />
+        </div>
+        <div className="shade-count">
+          <label htmlFor="">Set number of <span>Shade</span>  Colors</label>
+          <input type='number' min="1" max="100" value={shadeNumber} onChange={e => setShadeNumber(e.target.value)} className='input-number' />
+        </div>
+      </form>
 
       <div className="container">
 
@@ -84,9 +102,7 @@ const Tint = () => {
 
 export default Tint
 
-
-
-
+// tint box component
 const TintColor = ({ rgb, weight }) => {
   return (
     <div className='tint-color' style={{ backgroundColor: `${rgb}` }} >
@@ -100,6 +116,7 @@ const TintColor = ({ rgb, weight }) => {
   )
 }
 
+// shade box component
 const ShadeColor = ({ rgb, weight }) => {
   return (
     <div className='shade-color' style={{ backgroundColor: `${rgb}` }} >

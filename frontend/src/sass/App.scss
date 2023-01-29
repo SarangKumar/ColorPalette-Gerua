@@ -259,7 +259,7 @@ a {
           a {
             color: $textColorLight;
             height: fit-content;
-            margin: 0 0.5rem ;
+            margin: 0 0.5rem;
 
             .tintshade {
               transition: $transition;
@@ -548,6 +548,40 @@ a {
         padding: 0.5rem 1rem;
         border-radius: 5px;
         cursor: pointer;
+      }
+
+
+      //second form
+
+    }
+
+    .set-tint-shade-count {
+      @include flexBox;
+      margin-top: 2rem;
+
+      .tint-count,
+      .shade-count {
+        @include flexBox($flexDirection: row, $justifyContent: space-between, $colGap:0.5rem, $rowGap: 0);
+        min-width: 16rem;
+
+        label {
+          font-size: 0.8rem;
+        }
+
+        .input-number {
+          border: 2px solid rgba(29, 29, 29, 0.288);
+          border-radius: 5px;
+          padding: 0.5rem 1rem;
+          max-width: 3.5rem;
+          outline: none;
+
+          &:active,
+          &:focus-within,
+          &:focus {
+            border: 2px solid $primary;
+          }
+
+        }
       }
     }
 
