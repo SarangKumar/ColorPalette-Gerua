@@ -6,7 +6,8 @@ import { BiZoomIn } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { buttonVariants } from '../utils/Variants'
-
+import { MdContentCopy } from 'react-icons/md';
+import { WiMoonAltThirdQuarter } from 'react-icons/wi';
 
 const PaletteCard = (props) => {
 
@@ -20,7 +21,11 @@ const PaletteCard = (props) => {
               // document.getElementsByClassName('palette-color')[index].innerText = 'copied!';
               // setTimeout(()=>document.getElementsByClassName('palette-color')[index].innerText=color, 1000);
             }} className='palette-color' style={{ backgroundColor: color }}>
-              <p>{color.substring(1, 7).toUpperCase()}</p>
+              <div className='color-code'>{color.substring(1, 7).toUpperCase()}</div>
+              <div className="icons">
+                <Link to={`/tint-and-shade-generator/${color.slice(1, 7)}`}><WiMoonAltThirdQuarter size={15} className='tintshade' /></Link>
+                <MdContentCopy className='copy' size={15} onClick={() => { navigator.clipboard.writeText(color) }} />
+              </div>
             </motion.div>)
         })}
 

@@ -231,19 +231,54 @@ a {
       margin-bottom: 0.5rem;
 
       .palette-color {
-        @include flexBox();
+        @include flexBox($justifyContent: space-between, $rowGap: 0.5rem);
         width: 100%;
         flex: 1 1 auto;
         padding: 0.9rem;
         transition: $transition;
-        color: transparent;
+        // color: transparent;
         z-index: 1;
 
-        &:hover {
-          transform: scale(1.1);
-          cursor: pointer;
-          color: $textColorDark;
-          z-index: 2;
+
+        &:hover .color-code,
+        &:hover .icons {
+          display: inline-block;
+          color: $textColorLight;
+        }
+
+
+        .color-code {
+          color: transparent;
+          font-size: 0.9rem;
+        }
+
+        .icons {
+          display: none;
+          //  @include flexBox();
+
+          a {
+            color: $textColorLight;
+            height: fit-content;
+            margin: 0 0.5rem ;
+
+            .tintshade {
+              transition: $transition;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
+
+          .copy {
+            transition: $transition;
+
+            &:hover {
+              transform: scale(1.1);
+              cursor: pointer;
+            }
+          }
+
         }
       }
 
@@ -561,10 +596,10 @@ a {
           &:hover .data {
             display: block;
           }
-          
-        &:hover {
-          box-shadow: $boxShadow1;
-        }
+
+          &:hover {
+            box-shadow: $boxShadow1;
+          }
         }
       }
 
@@ -580,7 +615,7 @@ a {
           height: 5rem;
           width: 7rem;
           border-radius: 10px;
-          
+
           .copy-icon {
             transition: $transition;
             color: $textColorLight;

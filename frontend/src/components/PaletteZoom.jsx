@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { AiOutlineHeart, AiOutlineUndo } from 'react-icons/ai';
-import { MdContentCopy } from 'react-icons/md';
 import { RxCross2 } from 'react-icons/rx';
+import { MdContentCopy } from 'react-icons/md';
 import { WiMoonAltThirdQuarter } from 'react-icons/wi';
 import { useState } from 'react';
 import ColorPaletteData from '../data/ColorData'
@@ -28,7 +28,7 @@ const PaletteZoom = () => {
 
             <div className='palette-zoom'>
                 {filterColorsArray.map((color, index) => <div key={index} style={{ backgroundColor: color }} className='zoom-palette-color'>
-                    <p>{color.substring(1,7).toUpperCase()}</p>
+                    <p>{color.substring(1, 7).toUpperCase()}</p>
                     <div className="options">
                         <Toolbar color={color} setFilterColorsArray={setFilterColorsArray} filterColorsArray={filterColorsArray} colorsArray={colorsArray} setColorsArray={setColorsArray} />
                     </div>
@@ -53,11 +53,12 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
                 setFilterColorsArray(colorsArray)
             }} color={'white'} size={20} />
             </li>
+            <li>
+                <Link to={`/tint-and-shade-generator/${color.slice(1, 7)}`}><WiMoonAltThirdQuarter color={'white'} size={20} /></Link>
+            </li>
             <li><MdContentCopy onClick={() => {
                 navigator.clipboard.writeText(color)
             }} color={'white'} size={20} />
-            </li>
-            <li><Link to={`/tint-and-shade-generator/${color.slice(1,7)}`}><WiMoonAltThirdQuarter color={'white'} size={20} /></Link>
             </li>
         </ul>
     )
