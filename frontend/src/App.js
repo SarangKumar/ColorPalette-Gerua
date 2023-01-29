@@ -5,7 +5,6 @@ import Home from './components/Home';
 import PageNotFound from './components/PageNotFound';
 import PaletteZoom from './components/PaletteZoom';
 import SolidColors from './components/SolidColors';
-import Hero from './components/Hero';
 
 import './sass/App.scss';
 import TintShade from './components/TintShade';

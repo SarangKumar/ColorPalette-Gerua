@@ -28,7 +28,7 @@ const Tint = () => {
   useEffect(() => {
     setTintList(new Values(color).tints(Math.floor(100 / tintNumber)));
     setShadeList(new Values(color).shades(Math.floor(100 / shadeNumber)));
-    
+
     // console.log(color);
     // console.log(tintList);
     // console.log(shadeList);
@@ -68,7 +68,6 @@ const Tint = () => {
         <div className='tint-color-box'>
           {tintList.map((colorObj, index) => {
 
-            const type = colorObj.type;
             const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
             const weight = colorObj.weight;
 
@@ -84,9 +83,8 @@ const Tint = () => {
 
         <div className='shade-color-box'>
 
-          {shadeList.map((colorObj, index) => {
+          {shadeList.slice(0,shadeNumber).map((colorObj, index) => {
 
-            const type = colorObj.type;
             const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
             const weight = colorObj.weight;
 

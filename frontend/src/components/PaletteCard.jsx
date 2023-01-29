@@ -1,8 +1,7 @@
 import React from 'react'
 import { FaRegHeart } from 'react-icons/fa'
-import { BsThreeDots } from 'react-icons/bs'
+// import { BsThreeDots } from 'react-icons/bs'
 import { BiZoomIn } from 'react-icons/bi'
-// BiZoomIn
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { buttonVariants } from '../utils/Variants'

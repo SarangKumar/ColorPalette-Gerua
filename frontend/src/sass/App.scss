@@ -75,7 +75,6 @@ a {
 
           .navlink-active {
             color: $primary;
-            // box-shadow: $boxShadowNeumorph;
           }
         }
       }
@@ -86,6 +85,7 @@ a {
       height: 5px;
       width: var(--progress);
       background-color: $primary;
+      border-radius:3px ;
     }
   }
 
