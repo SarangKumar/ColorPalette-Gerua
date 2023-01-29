@@ -41,42 +41,51 @@ a {
 
 
   // navigation
-
-  .header {
-    padding: 1rem 1rem;
-    border-bottom: 1px solid rgba(29, 29, 29, 0.1);
-    @include flexBox($justifyContent: space-between);
-    background-color: $bgWhite;
+  .navigation {
     position: sticky;
     width: 100vw;
     top: 0;
-    box-shadow: $boxShadow1;
     z-index: 3;
 
-    ul {
-      @include flexBox($colGap: 1rem);
+    .header {
+      padding: 1rem 1rem;
+      border-bottom: 1px solid rgba(29, 29, 29, 0.1);
+      @include flexBox($justifyContent: space-between);
+      background-color: $bgWhite;
+      box-shadow: $boxShadow1;
 
-      >li {
-        list-style: none;
-        font-size: 0.8rem;
+      ul {
+        @include flexBox($colGap: 1rem);
 
-        a {
-          color: $textColorDark;
-          padding: 0.5rem 0.8rem;
-          border-radius: 5px;
+        >li {
+          list-style: none;
+          font-size: 0.8rem;
 
-          &:active,
-          &:hover {
+          a {
+            color: $textColorDark;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+
+            &:active,
+            &:hover {
+              color: $primary;
+              cursor: pointer;
+            }
+          }
+
+          .navlink-active {
             color: $primary;
-            cursor: pointer;
+            // box-shadow: $boxShadowNeumorph;
           }
         }
-
-        .navlink-active {
-          color: $primary;
-          // box-shadow: $boxShadowNeumorph;
-        }
       }
+    }
+
+    #progress-bar {
+      --progress: 0;
+      height: 5px;
+      width: var(--progress);
+      background-color: $primary;
     }
   }
 
@@ -279,7 +288,7 @@ a {
           }
         }
 
-        &:hover{
+        &:hover {
           z-index: 2;
           transform: scale(1.2);
         }
@@ -564,7 +573,7 @@ a {
 
       .tint-count,
       .shade-count {
-        @include flexBox($flexDirection: row, $justifyContent: space-between, $colGap:0.5rem, $rowGap: 0);
+        @include flexBox($flexDirection: row, $justifyContent: space-between, $colGap: 0.5rem, $rowGap: 0);
         min-width: 16rem;
 
         label {
