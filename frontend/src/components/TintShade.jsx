@@ -25,7 +25,8 @@ const Tint = () => {
 
     setTintList(new Values(color).tints(4));
     setShadeList(new Values(color).shades(4));
-    // console.log(list);
+    console.log(tintList);
+    console.log(shadeList);
 
   }
 
