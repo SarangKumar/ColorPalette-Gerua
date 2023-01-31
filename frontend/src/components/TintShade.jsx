@@ -50,11 +50,11 @@ const Tint = () => {
 
       <form className='set-tint-shade-count'>
         <div className="tint-count">
-          <label htmlFor="">Set number of <span>Tint</span> Colors</label>
+          <label htmlFor="">Set number of <span style={{color: color}}>Tint</span> Colors</label>
           <input type='number' min="1" max="100" value={tintNumber} onChange={e => setTintNumber(e.target.value)} className='input-number' />
         </div>
         <div className="shade-count">
-          <label htmlFor="">Set number of <span>Shade</span>  Colors</label>
+          <label htmlFor="">Set number of <span style={{color: color}}>Shade</span>  Colors</label>
           <input type='number' min="1" max="100" value={shadeNumber} onChange={e => setShadeNumber(e.target.value)} className='input-number' />
         </div>
       </form>

@@ -513,14 +513,15 @@ a {
   .tint-shade-container {
 
     form {
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      column-gap: 0.51rem;
+      @include flexBox($colGap: 0.5rem);
+      // display: flex;
+      // justify-content: center;
+      // text-align: center;
+      // column-gap: 0.51rem;
 
       .input-color {
-        width: 2rem;
-        height: 2rem;
+        width: 2.25rem;
+        height: 2.25rem;
         border-radius: 50%;
         overflow: hidden;
         border: none;
@@ -573,8 +574,8 @@ a {
 
       .tint-count,
       .shade-count {
-        @include flexBox($flexDirection: row, $justifyContent: space-between, $colGap: 0.5rem, $rowGap: 0);
-        min-width: 16rem;
+        @include flexBox($flexDirection: row, $justifyContent: space-between, $colGap: -1rem, $rowGap: 0);
+        min-width: 15rem;
 
         label {
           font-size: 0.8rem;
@@ -584,7 +585,7 @@ a {
           border: 2px solid rgba(29, 29, 29, 0.288);
           border-radius: 5px;
           padding: 0.5rem 1rem;
-          max-width: 3.5rem;
+          max-width: 4.5rem;
           outline: none;
 
           &:active,
