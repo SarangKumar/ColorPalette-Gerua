@@ -8,26 +8,26 @@ import { buttonVariants } from '../utils/Variants'
 import { MdContentCopy } from 'react-icons/md';
 import { WiMoonAltThirdQuarter } from 'react-icons/wi';
 
-import { ToastContainer, toast } from 'react-toastify';
+//toast
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function copyColor(color) {
-  navigator.clipboard.writeText(color);
-  toast.success(`${color} copied`, {
-    position: "top-right",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: false,
-    draggable: true,
-    progress: undefined,
-    theme: "light",
-    });
-}
-
-
 const PaletteCard = (props) => {
+
+  function copyColor(color) {
+    navigator.clipboard.writeText(color);
+    toast.success(`${color} copied`, {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+  }
 
   return (
     <div className='palette-box'>
@@ -52,18 +52,6 @@ const PaletteCard = (props) => {
           <Link to={`/palette/${props.data.id}`}><BiZoomIn className='more-info' size={16} /></Link>
         </button>
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="light"
-      />
     </div>
   )
 }

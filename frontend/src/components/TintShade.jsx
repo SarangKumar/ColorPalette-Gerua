@@ -5,6 +5,25 @@ import { MdContentCopy } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 
 
+//toast
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+function copyColor(color) {
+  navigator.clipboard.writeText(color);
+  toast.success(`${color} copied`, {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  });
+}
+
 const Tint = () => {
   const colorHex = useParams().colorHex;
 
@@ -50,11 +69,11 @@ const Tint = () => {
 
       <form className='set-tint-shade-count'>
         <div className="tint-count">
-          <label htmlFor="">Set number of <span style={{color: color}}>Tint</span> Colors</label>
+          <label htmlFor="">Set number of <span style={{ color: color }}>Tint</span> Colors</label>
           <input type='number' min="1" max="100" value={tintNumber} onChange={e => setTintNumber(e.target.value)} className='input-number' />
         </div>
         <div className="shade-count">
-          <label htmlFor="">Set number of <span style={{color: color}}>Shade</span>  Colors</label>
+          <label htmlFor="">Set number of <span style={{ color: color }}>Shade</span>  Colors</label>
           <input type='number' min="1" max="100" value={shadeNumber} onChange={e => setShadeNumber(e.target.value)} className='input-number' />
         </div>
       </form>
@@ -83,7 +102,7 @@ const Tint = () => {
 
         <div className='shade-color-box'>
 
-          {shadeList.slice(0,shadeNumber).map((colorObj, index) => {
+          {shadeList.slice(0, shadeNumber).map((colorObj, index) => {
 
             const rgb = `rgb(${colorObj.rgb[0]}, ${colorObj.rgb[1]}, ${colorObj.rgb[2]})`
             const weight = colorObj.weight;
@@ -104,9 +123,7 @@ export default Tint
 const TintColor = ({ rgb, weight }) => {
   return (
     <div className='tint-color' style={{ backgroundColor: `${rgb}` }} >
-      <MdContentCopy className='copy-icon' size={24} onClick={() =>
-        navigator.clipboard.writeText(rgb)
-      } />
+      <MdContentCopy className='copy-icon' size={24} onClick={() => copyColor(rgb)} />
       <div className="data">
         weight: {weight}
       </div>
@@ -118,9 +135,7 @@ const TintColor = ({ rgb, weight }) => {
 const ShadeColor = ({ rgb, weight }) => {
   return (
     <div className='shade-color' style={{ backgroundColor: `${rgb}` }} >
-      <MdContentCopy className='copy-icon' size={24} onClick={() =>
-        navigator.clipboard.writeText(rgb)
-      } />
+      <MdContentCopy className='copy-icon' size={24} onClick={() => copyColor(rgb)} />
       <div className="data">
         weight: {weight}
       </div>

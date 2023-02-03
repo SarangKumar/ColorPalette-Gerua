@@ -7,14 +7,19 @@ import { WiMoonAltThirdQuarter } from 'react-icons/wi';
 import { useState } from 'react';
 import ColorPaletteData from '../data/ColorData'
 
-const PaletteZoom = () => {
+//toast
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+const PaletteZoom = () => {
     const colorID = useParams().id;
     const colorData = ColorPaletteData.find(colorPalette => (colorPalette.id === parseInt(colorID)))
 
     console.log(colorData);
     const [colorsArray, setColorsArray] = useState(colorData.colors);
     const [filterColorsArray, setFilterColorsArray] = useState(colorData.colors);
+
 
     return (
         <div className="palette-container">
@@ -39,6 +44,20 @@ const PaletteZoom = () => {
 }
 
 const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, setColorsArray }) => {
+    function copyColor(color) {
+        navigator.clipboard.writeText(color);
+        toast.success(`${color} copied`, {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
+
     return (
         <ul className="toolbar">
             <li><RxCross2 onClick={() => {
@@ -56,9 +75,7 @@ const Toolbar = ({ color, filterColorsArray, setFilterColorsArray, colorsArray, 
             <li>
                 <Link to={`/tint-and-shade-generator/${color.slice(1, 7)}`}><WiMoonAltThirdQuarter color={'white'} size={20} /></Link>
             </li>
-            <li><MdContentCopy onClick={() => {
-                navigator.clipboard.writeText(color)
-            }} color={'white'} size={20} />
+            <li><MdContentCopy onClick={() => copyColor(color)} color={'white'} size={20} />
             </li>
         </ul>
     )

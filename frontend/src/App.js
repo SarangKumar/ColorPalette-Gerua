@@ -9,6 +9,8 @@ import SolidColors from './components/SolidColors';
 import './sass/App.scss';
 import TintShade from './components/TintShade';
 
+import { ToastContainer } from 'react-toastify';
+
 function App() {
   return (
     <div className="App">
@@ -25,6 +27,7 @@ function App() {
       {/* <Loader /> */}
       {/* <Loader2 /> */}
       <Footer />
+      <ToastContainer />
     </div>
   );
 }
